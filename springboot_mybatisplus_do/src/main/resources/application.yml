@@ -1,0 +1,27 @@
+server:
+  port: 80
+
+spring:
+  application:
+    name: springboot_mybatisplus_demo
+
+  datasource:
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/springboot_mybatisplus_demo
+
+mybatis-plus:
+  config-location: classpath:/mybatis.xml
+  mapper-locations: classpath:/mapper/*Mapper.xml
+  global-config:
+    db-column-underline: true  #是否开启驼峰命名
+    capital-mode: true #数据库大写下划线转换
+    id-type: 2 #分布式全局ID
+    table-prefix: hgx_ #全局表前缀
+    refresh-mapper: true  #刷新mapper 调试神器
+    #逻辑删除配置（下面3个配置）
+    sql-injector: com.baomidou.mybatisplus.mapper.LogicSqlInjector
+    logic-delete-value: 0 #有个坑，该字段得有默认值才行
+    logic-not-delete-value: 1
+
