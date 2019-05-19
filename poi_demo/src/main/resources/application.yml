@@ -1,0 +1,9 @@
+server:
+  port: 80
+  servlet:
+    context-path: /
+
+#禁用banner
+#spring:
+#  main:
+#    banner-mode: off
