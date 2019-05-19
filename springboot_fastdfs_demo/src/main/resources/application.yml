@@ -1,0 +1,22 @@
+#整合FASTDFS
+fdfs:
+  soTimeout: 1501
+  connectTimeout: 601
+#缩略图生成参数
+  thumbImage:
+    width: 150
+    height: 150
+#TrackerList参数,支持多个
+  trackerList[0]:
+    - 192.168.25.133:22122
+#HTTP URL
+  httpurl: http://192.168.25.133/
+
+
+
+server:
+  port: 80
+  tomcat:
+    uri-encoding: utf-8
+  servlet:
+    context-path: /
