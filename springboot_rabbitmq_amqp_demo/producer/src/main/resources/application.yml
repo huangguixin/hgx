@@ -1,0 +1,17 @@
+server:
+  port: 9999
+
+spring:
+  rabbitmq:
+    host: 127.0.0.1
+    username: admin
+    password: admin
+    virtual-host: vHost01
+    template:
+      retry:
+        enabled: true
+        multiplier: 2
+        initial-interval: 10000ms
+        max-interval: 210000ms
+      exchange: hgx.exchange
+    publisher-confirms: true
