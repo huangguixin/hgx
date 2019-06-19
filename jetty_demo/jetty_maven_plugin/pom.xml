@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>jetty_demo</artifactId>
+        <groupId>com.hgx</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>${project.parent.groupId}</groupId>
+    <artifactId>jetty_maven_plugin</artifactId>
+    <version>${project.parent.version}</version>
+    <packaging>war</packaging>
+
+    <properties>
+        <!--<jetty.version>9.3.8.v20160314</jetty.version>-->
+        <!--<web.port>9999</web.port>-->
+    </properties>
+
+
+    <dependencies>
+
+    </dependencies>
+
+    <build>
+        <finalName>jetty</finalName>
+
+        <plugins>
+            <plugin>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-maven-plugin</artifactId>
+                <version>9.3.8.v20160314</version>
+                <!--<version>${jetty.version}</version>-->
+                <configuration>
+                    <httpConnector>
+                        <port>9999</port>
+                        <!--<port>${web.port}</port>-->
+                        <idleTimeout>60000</idleTimeout>
+                    </httpConnector>
+                    <scanIntervalSeconds>10</scanIntervalSeconds>
+                    <webApp>
+                        <contextPath>${project.build.finalName}</contextPath>
+                    </webApp>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
